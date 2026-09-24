@@ -19,7 +19,7 @@ Other moves of this kind are in `references/evidence.md`. Diablo 3's Reaper of S
 
 The user's input: `$ARGUMENTS`
 
-The first item is the design doc: a local path or a link. Everything after it is the user's notes (focus areas, known worries). If no doc is given, ask for one. Do not guess which doc to review.
+If your agent does not fill in the input above, take it from the user's message. The first item is the design doc: a local path or a link. Everything after it is the user's notes (focus areas, known worries). If no doc is given, ask for one. Do not guess which doc to review.
 
 ## Core Prompt
 
@@ -98,14 +98,14 @@ This skill reviews. It does not edit the doc. Report in the chat.
 2. **Collect the anchors.** Do one short pass:
    - The doc's own fantasy, goals, and pillars.
    - The project's main design doc, pillars, or GDD. Search the repo's docs and design folders, and follow the links in the doc.
-   - The project's CLAUDE.md files and your memory for this project: settled decisions and the user's stated tastes.
+   - The project's agent instruction files (for example `CLAUDE.md` or `AGENTS.md`) and any memory you keep for this project: settled decisions and the user's stated tastes.
    - The design docs of systems that this one links to.
    - The project's own playtest data and tools, if any (bots, telemetry, balance scripts, play reports).
    - The user's notes from the input.
 
    Write an anchor brief of less than 300 words: core fantasy, target players and modes, stated tastes, settled decisions that constrain this system, linked systems, and available playtest tools. If the project has no core fantasy or pillars, record that. It becomes a finding, and the doc's own goals stand in for the anchors.
 
-3. **Fan out.** Start the 8 lens agents from `references/lenses.md` in parallel, in one message, with the Agent tool. They must be fresh agents, so that they do not share the blind spots of whoever wrote the doc. Give each agent:
+3. **Fan out.** Start the 8 lens agents from `references/lenses.md` in parallel, with your agent's subagent tool. They must be fresh agents, so that they do not share the blind spots of whoever wrote the doc. Give each agent:
    - the shared brief and its own lens brief from `references/lenses.md`, pasted in full
    - the absolute path of the doc snapshot
    - the anchor brief and the user's notes

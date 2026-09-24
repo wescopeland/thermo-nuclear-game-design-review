@@ -1,6 +1,6 @@
 # Thermo-Nuclear Game Design Review
 
-A Claude Code skill that reviews a game design doc with one goal: make the system as fun as possible. It runs 8 lens agents in parallel and cites a checked file of designer principles, live-game data, and research. One review uses a few hundred thousand tokens.
+An agent skill that reviews a game design doc with one goal: make the system as fun as possible. It runs 8 lens agents in parallel and cites a checked file of designer principles, live-game data, and research. One review uses a few hundred thousand tokens.
 
 ```
 npx skills add wescopeland/thermo-nuclear-game-design-review
